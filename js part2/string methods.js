@@ -14,3 +14,10 @@ no changes can be made to string
 whenever we do try to make a change, a new string is created and old one remains same
 
 */
+
+/*
+Method Chaining 
+using one method after another. order of exeecutionwill be left to right
+
+str.toUpperCase().trim();       
+*/
