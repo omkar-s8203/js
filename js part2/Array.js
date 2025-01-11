@@ -27,3 +27,8 @@ let newArr= [];
 let emptyarray = [];
 
 console.log(marks.length);
+
+/*
+Arrays are mutable
+we can change the arrays value in code.
+*/
