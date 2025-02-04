@@ -50,9 +50,9 @@ function levelUp(){
     gameFlash(randbtn);
 }
 
-function checkAns(index){
+function checkAns(idx){
     console.log("current level : ", level);
-    let idx = level-1;
+    // let idx = level-1;
 
     if(userSeq[idx]===gameSeq[idx]){
         // console.log("same value")
@@ -60,8 +60,13 @@ function checkAns(index){
             setTimeout(levelUp, 1000);
     }
     else{
-        h2.innerText = `game over, your score ${level}`
-        // reset();
+        h2.innerHTML = `Game over! your score was <b>${level} </b> <br> Press any kay to start.`;
+        document.querySelector("body").style.color = "red";
+
+        setTimeout(function() {
+            document.querySelector("body").style.backgroundColor = "white";
+        },150);
+        reset();
     }
 }
 
@@ -69,8 +74,8 @@ function checkAns(index){
 
 
 function btnPress() {
-   console.log("button is press")
-   console.log(this);
+//    console.log("button is press")
+//    console.log(this);
 let btn = this;
 userFlash(btn);
 
