@@ -48,4 +48,13 @@
          })
     }
 
-    // saveDB("omkar suryawasnshi");
+    let request = saveDB("omkar suryawasnshi");
+    
+    request.then(()=>{
+        console.log("promise got full fill");
+        console.log(request);
+    })
+    .catch(()=>{
+        console.log("promise was rejected");
+        console.log(request);
+    })
