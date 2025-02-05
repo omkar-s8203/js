@@ -51,14 +51,14 @@ function saveDB(data) {
 saveDB("omkar suryawasnshi")
     .then(() => {
         console.log("data 1: promise got full fill");
-        saveDB("diksha kale")
-            .then(() => {
-                console.log("data 2: was saved");
-                saveDB("Sarthak bhosle")
-                    .then(() => {
-                        console.log("data 3: was saved");
-                    });
-            });
+        return saveDB("diksha kale");
+    })
+    .then(()=>{
+        console.log("data 2: saved ")
+        return saveDB("diksha kale");
+    })
+    .then(()=>{
+        console.log("data 3: saved ")
     })
 
     .catch(() => {
