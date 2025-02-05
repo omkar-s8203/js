@@ -35,26 +35,32 @@
 
 
 
-    function saveDB(data) {
-       
-         return new Promise((resolve, reject) =>{
-            let internetSpeed = Math.floor(Math.random() * 10) + 1;
+function saveDB(data) {
 
-            if(internetSpeed>4){
-                resolve("success: data was saved");
-            }else{
-                reject("fail: something occur wrong ");
-            }
-         })
-    }
+    return new Promise((resolve, reject) => {
+        let internetSpeed = Math.floor(Math.random() * 10) + 1;
 
-    let request = saveDB("omkar suryawasnshi");
-    
-    request.then(()=>{
-        console.log("promise got full fill");
-        console.log(request);
+        if (internetSpeed > 4) {
+            resolve("success: data was saved");
+        } else {
+            reject("fail: something occur wrong ");
+        }
     })
-    .catch(()=>{
+}
+
+saveDB("omkar suryawasnshi")
+    .then(() => {
+        console.log("data 1: promise got full fill");
+        saveDB("diksha kale")
+            .then(() => {
+                console.log("data 2: was saved");
+                saveDB("Sarthak bhosle")
+                    .then(() => {
+                        console.log("data 3: was saved");
+                    });
+            });
+    })
+
+    .catch(() => {
         console.log("promise was rejected");
-        console.log(request);
-    })
+    });
