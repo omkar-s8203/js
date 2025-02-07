@@ -49,18 +49,23 @@ function saveDB(data) {
 }
 
 saveDB("omkar suryawasnshi")
-    .then(() => {
+    .then((result) => {
         console.log("data 1: promise got full fill");
+        console.log(result);
         return saveDB("diksha kale");
+        
     })
-    .then(()=>{
+    .then((result)=>{
         console.log("data 2: saved ")
+        console.log(result);
         return saveDB("diksha kale");
     })
-    .then(()=>{
+    .then((result)=>{
         console.log("data 3: saved ")
+        console.log(result);
     })
 
-    .catch(() => {
+    .catch((error) => {
         console.log("promise was rejected");
+        console.log(error);
     });
